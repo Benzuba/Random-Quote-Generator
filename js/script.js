@@ -15,7 +15,7 @@ var quotes = [
   {
     quote: "Lets get started ",
     source: "Tony Appleton ",
-    citation: "To Win in Battle ",
+    // citation: "To Win in Battle ",
     year: 2012,
     tags: "Beginnings:"
   },
@@ -29,7 +29,7 @@ var quotes = [
   {
     quote: "It'll All Work Out",
     source: "Amy Limp ",
-    // citation: "It Doesn't Even Matter ",
+    citation: "It Doesn't Even Matter ",
     year: 2012,
     tags: "Hearing:"
   },
@@ -37,8 +37,8 @@ var quotes = [
     quote: "Better Before Worse ",
     source: "David Tanner ",
     // citation: "It Doesn't Even Matter ",
-    year: 1985,
-    tags: "Storms:"
+    // year: 1985,
+    // tags: "Storms:"
   }
 ]
 // Using the Math functions this function creates a random number to select a randmon quote from the quotes array of objects.
@@ -57,9 +57,16 @@ function printQuote(){
   var html;
   html = '<p class="quote">' + randomQuote.quote +'</p>';
   html += '<p class="source">' + randomQuote.source;
-  html +=  '<span class="citation">'+ randomQuote.citation + '</span>';
-  html +=  '<span class="year">' + randomQuote.year + '</span> ' + '<br />';
-  html +=  '<span class="tags">' + randomQuote.tags + '</span> ' + '</p>'
+  if (randomQuote.citation){
+    html +=  '<span class="citation">'+ randomQuote.citation + '</span>';
+  }
+  if (randomQuote.year){
+    html +=  '<span class="year">' + randomQuote.year + '</span> ' + '<br />';
+  }
+  if (randomQuote.tags){
+    html +=  '<span class="tags">' + randomQuote.tags + '</span> ';
+  }
+  html += '</p>';
   document.getElementById('quote-box').innerHTML = html;
   //calls the getRandomColor and crates a string to assign a random color to the background
   document.body.style.backgroundColor = getRandomColor();
