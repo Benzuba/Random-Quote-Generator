@@ -25,6 +25,20 @@ var quotes = [
     citation: "It Doesn't Even Matter ",
     year: 2019,
     tags: "Downfalls:"
+  },
+  {
+    quote: "It'll All Work Out",
+    source: "Amy Limp ",
+    // citation: "It Doesn't Even Matter ",
+    year: 2012,
+    tags: "Hearing:"
+  },
+  {
+    quote: "Better Before Worse ",
+    source: "David Tanner ",
+    // citation: "It Doesn't Even Matter ",
+    year: 1985,
+    tags: "Storms:"
   }
 ]
 // Using the Math functions this function creates a random number to select a randmon quote from the quotes array of objects.
@@ -40,7 +54,6 @@ function getRandomColor(){
 //printQuote calls getRandomQuote and then constructs a string using the quote object for HTML
 function printQuote(){
   var randomQuote = getRandomQuote();
-  console.log(randomQuote);
   var html;
   html = '<p class="quote">' + randomQuote.quote +'</p>';
   html += '<p class="source">' + randomQuote.source;
