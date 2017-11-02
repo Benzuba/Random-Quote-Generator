@@ -71,9 +71,9 @@ function printQuote(){
   //calls the getRandomColor and crates a string to assign a random color to the background
   document.body.style.backgroundColor = getRandomColor();
 }
-//sets a time to call the printQuote function every 2 seconds
+//sets a time to call the printQuote function every 5 seconds
 function timeQuote(){
-  timeoutID = window.setInterval(printQuote, 2000);
+  timeoutID = window.setInterval(printQuote, 5000);
 }
 
 timeQuote();
