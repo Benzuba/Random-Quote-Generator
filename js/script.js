@@ -17,27 +17,27 @@ var quotes = [
     source: "Tony Appleton ",
     citation: "To Win in Battle ",
     year: 2012,
-    tags: "Beginnings"
+    tags: "Beginnings:"
   },
   {
     quote: "Just Go With Thow Flow ",
     source: "Matt Lewis ",
     citation: "It Doesn't Even Matter ",
     year: 2019,
-    tags: "Downfalls"
+    tags: "Downfalls:"
   }
 ]
-
+// Using the Math functions this function creates a random number to select a randmon quote from the quotes array of objects.
 function getRandomQuote(){
   var quote = quotes[Math.floor(Math.random()*quotes.length)];
   return quote;
 }
-
+//Using the Math functions this function creates a random number to select a random color from the colors array.
 function getRandomColor(){
   var color = colors[Math.floor(Math.random()*colors.length)];
   return color;
 }
-
+//printQuote calls getRandomQuote and then constructs a string using the quote object for HTML
 function printQuote(){
   var randomQuote = getRandomQuote();
   console.log(randomQuote);
@@ -48,10 +48,10 @@ function printQuote(){
   html +=  '<span class="year">' + randomQuote.year + '</span> ' + '<br />';
   html +=  '<span class="tags">' + randomQuote.tags + '</span> ' + '</p>'
   document.getElementById('quote-box').innerHTML = html;
-
+  //calls the getRandomColor and crates a string to assign a random color to the background
   document.body.style.backgroundColor = getRandomColor();
 }
-
+//sets a time to call the printQuote function every 2 seconds
 function timeQuote(){
   timeoutID = window.setInterval(printQuote, 2000);
 }
